@@ -23,9 +23,18 @@ test('get special attacks', () => {
     ],
   };
 
-  const expected = [
-    [8, 'Двойной выстрел', 'http://...', 'Двойной выстрел наносит двойной урон'],
-    [9, 'Нокаутирующий удар', 'http://...', 'Описание недоступно'],
+  const expected = [{
+    id: 8,
+    name: 'Двойной выстрел',
+    icon: 'http://...',
+    description: 'Двойной выстрел наносит двойной урон',
+  },
+  {
+    id: 9,
+    name: 'Нокаутирующий удар',
+    icon: 'http://...',
+    description: 'Описание недоступно',
+  },
   ];
   const recieved = attacksDesc(obj);
 

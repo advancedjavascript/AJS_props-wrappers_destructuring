@@ -1,15 +1,18 @@
-export default function attacksDesc(obj) {
-  const result = [];
+const attacksDesc = (obj) => (
   obj.special.map((arr) => {
-    if (!arr.description) {
-      arr.description = 'Описание недоступно';
-    }
     const {
-      id, name, icon, description,
+      id,
+      name,
+      icon,
+      description = 'Описание недоступно',
     } = arr;
 
-
-    result.push([id, name, icon, description]);
-  });
-  return (result);
-}
+    return {
+      id,
+      name,
+      icon,
+      description,
+    };
+  })
+);
+export default attacksDesc;
